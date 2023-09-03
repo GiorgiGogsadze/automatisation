@@ -37,6 +37,9 @@ jobs:
         with:
           python.version: "3.11"
 
+      - name: clone repository
+        uses: actions/checkout@v3
+
       - name: run my script
         run: python3 myNumbers.py
       
