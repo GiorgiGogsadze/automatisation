@@ -34,6 +34,9 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
+    env:
+      JOB_NAME: "Run Script"
+
     steps:
       - name: Install python 3.11
         uses: actions/setup-python@v3
@@ -47,6 +50,10 @@ jobs:
         run: |
           echo "App name: ${{ env.APP_NAME }}"
           echo "App package: ${{ env.APP_PACKAGE }}"
+          echo "Job Name: ${{ env.JOB_NAME }}"
+          echo "Step Name: $STEP_NAME"
+        env:
+          STEP_NAME: "step name"
 
       - name: run my script
         run: python3 myNumbers.py
