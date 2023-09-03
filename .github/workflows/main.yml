@@ -45,8 +45,8 @@ jobs:
 
       - name: Name of my Script
         run: |
-          echo "App name: ${{ env.APP_NAME }}
-          echo "App package: ${{ env.APP_PACKAGE }}
+          echo "App name: ${{ env.APP_NAME }}"
+          echo "App package: ${{ env.APP_PACKAGE }}"
 
       - name: run my script
         run: python3 myNumbers.py
