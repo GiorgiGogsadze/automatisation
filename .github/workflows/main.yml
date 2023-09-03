@@ -1,5 +1,9 @@
 name: my_automatisation
 
+env:
+  APP_NAME: "My Application"
+  APP_PACKAGE: "my_app_${{ github.sha }}"
+
 on:
   push:
     branches: ["main"]
@@ -38,6 +42,11 @@ jobs:
 
       - name: clone repository
         uses: actions/checkout@v3
+
+      - name: Name of my Script
+        run: |
+          echo "App name: ${{ env.APP_NAME }}
+          echo "App package: ${{ env.APP_PACKAGE }}
 
       - name: run my script
         run: python3 myNumbers.py
